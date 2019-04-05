@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Max and Min</title>
+	<meta charset="utf-8" />
+	<link rel="stylesheet" href="reset.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+ 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+	<style>
+		.box{
+			width: 250px;
+			text-align: center;
+			outline: none;
+			background-color: #ff99ff;
+
+		}
+		.heading{
+			color: white;
+  			text-shadow: 1px 1px 12px black, 0 0 35px blue, 0 0 45px darkblue;
+		}
+		.ela{
+			color: white;
+		}
+	</style>
+</head>
+<body>
+	<div class="container text-center bg-primary"><br>
+  		<h2 class="heading"><u>Maximum and Minimum</u></h2><br>
+  		<form>
+    		<div>
+      			<label><b>First Number</b></label><br>
+      			<input type="number" id="fnum" placeholder="Enter First Number" class="box">
+    		</div><br>
+    		<div>
+      			<label><b>Second Number</b></label><br>
+      			<input type="number" id="snum" placeholder="Enter Second Number" class="box">
+    		</div><br>
+    		<div>
+      			<label><b>Third Number</b></label><br>
+      			<input type="number" id="tnum" placeholder="Enter Third Number" class="box">
+    		</div><br>
+    		<button type="button" class="btn btn-success mb-4" onclick="myFunction()">Submit</button><br>
+    		<p id="exp" class="ela"></p>
+    		<p id="demo" class="ela mb-5"></p>
+  		</form>
+	</div>
+</body>
+<script>
+	function myFunction(){
+		var a = Number(document.getElementById('fnum').value);
+		var b = Number(document.getElementById('snum').value);
+		var c = Number(document.getElementById('tnum').value);
+		var max= "";
+		var min= "";
+		max=(a>=b)?(a>=c ? a:c):(b>=c ? b:c)
+		// if(a>b && a>c) {
+		// 	max = a ;
+		// }
+		// else if(b>a && b>c){
+		// 	max = b ;
+		// }
+		// else{
+		// 	max = c ;
+		// }
+		document.getElementById("exp").innerHTML = "maximum number: " + max + "<br>";
+
+		if(a<b && a<c) {
+			min = a ;
+		}
+		else if(b<a && b<c){
+			min = b ;
+		}
+		else{
+			min = c ;
+		}
+		document.getElementById("demo").innerHTML = "minimum number: " + min + "<br>";
+
+	}
+</script>
+</html>
